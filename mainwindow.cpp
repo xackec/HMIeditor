@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "widgetparser.h"
+#include "cnode.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
@@ -8,11 +9,8 @@ MainWindow::MainWindow(QWidget *parent) :
                 QFileDialog::getOpenFileName(this, tr("Open Widget File"),
                                              QDir::currentPath(),
                                              tr("XML Files ( *.xml)"));
-    if(fileName.isEmpty())
-        return;
-    WidgetParser handler;
-    QXmlInputSource   source(&file);
-    QXmlSimpleReader  reader;
+    CNode node;
+    node.readDocument(fileName);
 }
 
 MainWindow::~MainWindow()

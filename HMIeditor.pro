@@ -26,9 +26,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    widgetparser.cpp
+    widgetparser.cpp \
+    cnode.cpp
 
 HEADERS += \
         mainwindow.h \
-    widgetparser.h
+    widgetparser.h \
+    cnode.h
 
